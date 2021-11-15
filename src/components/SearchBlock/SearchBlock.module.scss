@@ -1,0 +1,17 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  span {
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .searchBlock {
+    margin-top: 5px;
+    width: 550px;
+  }
+
+}
