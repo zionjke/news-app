@@ -28,7 +28,7 @@ export const newsSlice = createSlice({
     name: 'news',
     initialState,
     reducers: {
-        setCurrentNews(state, action: PayloadAction<NewsType>) {
+        setCurrentNews(state, action: PayloadAction<NewsType | null>) {
             state.currentNews = action.payload
         },
         setFilterValue(state, action: PayloadAction<string>) {

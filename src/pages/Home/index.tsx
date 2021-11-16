@@ -3,7 +3,7 @@ import {SearchBlock} from "../../components/SearchBlock";
 import {Chip, Divider} from "@mui/material";
 import {NewsList} from "../../components/NewsList";
 import {useAppDispatch} from "../../store";
-import {fetchNewsSuccess, filterValue, news} from "../../store/reducers/news-reducer";
+import {currentNews, fetchNewsSuccess, filterValue, news} from "../../store/reducers/news-reducer";
 import {useSelector} from "react-redux";
 
 type HomeProps = {};
@@ -21,7 +21,7 @@ export const Home: React.FC<HomeProps> = (props) => {
 
     useEffect(() => {
         dispatch(fetchNewsSuccess())
-    }, [value])
+    }, [dispatch])
 
     return (
         <>

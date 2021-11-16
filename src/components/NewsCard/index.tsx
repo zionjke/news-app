@@ -3,6 +3,8 @@ import {Card, CardContent, CardMedia, Typography} from "@mui/material";
 import {Link} from "react-router-dom";
 import {NewsType} from "../../types";
 import styles from './NewsCard.module.scss'
+import {useAppDispatch} from "../../store";
+import {setCurrentNews} from "../../store/reducers/news-reducer";
 
 type NewsCardProps = {
     data: NewsType
@@ -10,9 +12,15 @@ type NewsCardProps = {
 
 export const NewsCard: React.FC<NewsCardProps> = (props) => {
     const {data} = props
+    const dispatch = useAppDispatch()
+
+    const setNewsHandler = () => {
+        dispatch(setCurrentNews(data))
+    }
+
     return (
-        <Link to={"/news/123"}>
-            <Card className={styles.card}>
+        <Link to={`/news/${data.title}`}>
+            <Card onClick={setNewsHandler} className={styles.card}>
                 <CardMedia
                     component="img"
                     height="140"
