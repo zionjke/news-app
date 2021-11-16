@@ -34,7 +34,7 @@ export const NewsCard: React.FC<NewsCardProps> = (props) => {
                     <Typography sx={{marginTop: "5px"}} className={styles.card_text} variant="body2" color="text.secondary">
                         {data.description}
                     </Typography>
-                    <Typography sx={{marginTop: "10px"}} variant="body2" color="text.secondary">
+                    <Typography sx={{marginTop: "10px"}} variant="body1" color="text.secondary">
                         {data.publishedAt}
                     </Typography>
                 </CardContent>
