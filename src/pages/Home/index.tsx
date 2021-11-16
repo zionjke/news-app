@@ -14,8 +14,8 @@ export const Home: React.FC<HomeProps> = (props) => {
     const value = useSelector(filterValue)
     const filteredNews = data.filter(item => {
         return (
-            item.title.toLowerCase().indexOf(value) >= 0 ||
-            item.description?.toLowerCase().indexOf(value) >= 0
+            item.title.toLowerCase().includes(value) ||
+            item.description?.toLowerCase().includes(value)
         )
     })
 
