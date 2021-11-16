@@ -6,6 +6,6 @@ const api = axios.create({
 })
 
 export const fetchNews = async () => {
-    const {data} = await api.get<ResponseType>(`top-headlines?country=us&apiKey=${process.env.REACT_APP_API_KEY}`)
+    const {data} = await api.get<ResponseType>(`top-headlines?country=us&pageSize=21&apiKey=${process.env.REACT_APP_API_KEY}`)
     return data
 }

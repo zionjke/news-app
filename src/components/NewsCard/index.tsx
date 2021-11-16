@@ -5,6 +5,7 @@ import {NewsType} from "../../types";
 import styles from './NewsCard.module.scss'
 import {useAppDispatch} from "../../store";
 import {setCurrentNews} from "../../store/reducers/news-reducer";
+import moment from "moment";
 
 type NewsCardProps = {
     data: NewsType
@@ -35,7 +36,7 @@ export const NewsCard: React.FC<NewsCardProps> = (props) => {
                         {data.description}
                     </Typography>
                     <Typography sx={{marginTop: "10px"}} variant="body1" color="text.secondary">
-                        {data.publishedAt}
+                        {moment(data.publishedAt).format("MMMM Do YYYY")}
                     </Typography>
                 </CardContent>
             </Card>
