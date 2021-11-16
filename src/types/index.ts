@@ -22,7 +22,8 @@ export type ResponseType = {
 
 export type NewsStateType = {
     data: NewsType[],
-    currentNews: NewsType | null
+    currentNews: NewsType | null,
+    filterValue: string
     isLoading: boolean,
     error: string
 }

@@ -1,0 +1,13 @@
+.card {
+  max-width: 402px !important;
+  height: 400px !important;
+  margin-top: 24px !important;
+
+  &_text {
+    height: 100px !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+}
+

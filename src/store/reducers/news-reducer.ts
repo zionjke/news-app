@@ -19,6 +19,7 @@ export const fetchNewsSuccess = createAsyncThunk('news/fetchNewsSuccess', async 
 const initialState: NewsStateType = {
     data: [],
     currentNews: null,
+    filterValue: '',
     error: '',
     isLoading: false
 }
@@ -29,6 +30,9 @@ export const newsSlice = createSlice({
     reducers: {
         setCurrentNews(state, action: PayloadAction<NewsType>) {
             state.currentNews = action.payload
+        },
+        setFilterValue(state, action: PayloadAction<string>) {
+            state.filterValue = action.payload.toLowerCase()
         }
     },
     extraReducers: {
@@ -47,6 +51,9 @@ export const newsSlice = createSlice({
     }
 })
 
-export const {setCurrentNews} = newsSlice.actions
+export const {setCurrentNews, setFilterValue} = newsSlice.actions
 
+export const filterValue = (state: RootState) => state.news.filterValue
+export const isLoading = (state: RootState) => state.news.isLoading
 export const news = (state: RootState) => state.news.data
+export const currentNews = (state: RootState) => state.news.currentNews
